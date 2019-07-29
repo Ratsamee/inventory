@@ -1,0 +1,12 @@
+class CreateCategories < ActiveRecord::Migration[5.2]
+  def change
+    create_table :categories do |t|
+      t.text :code
+      t.text :name
+      t.text :description
+      t.integer :category_id
+
+      t.timestamps
+    end
+  end
+end

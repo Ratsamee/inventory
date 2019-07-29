@@ -1,0 +1,64 @@
+<% if @product.errors.any? %>
+    <div class="form-row">
+        <ul class="error_message">
+            <% @product.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+<%= form_for @product do |f| %>
+    <div class="form-row">
+        <div class="form-group col-md-2"><%= f.label :code %></div>
+        <%= f.text_field :code, :class => "form-group col-md-6" %>
+        <div class="form-group col-md-4"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2"><%= f.label :name %></div>
+        <%= f.text_field :name, :class => "form-group col-md-6" %>
+        <div class="form-group col-md-4"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2"><%= f.label :dimension %></div>
+        <%= f.text_field :dimension, :class => "form-group col-md-6" %>
+        <div class="form-group col-md-4"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2"></div>
+        
+        <div class="form-group col-md-4"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2"><%= f.label :style %></div>
+        <%= f.text_field :style, :class => "form-group col-md-6" %>
+        <div class="form-group col-md-4"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2"><%= f.label :description %></div>
+        <%= f.text_area(:description, cols:100, rows:5, class:"form-group col-md-6") %>
+        <div class="form-group col-md-4"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2"><%= f.label :image %></div>
+        <%= f.url_field :image, :class => "form-group col-md-6" %>
+        <div class="form-group col-md-4"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2"><%= f.label :brand %></div>
+        <%= f.text_field :brand, :class => "form-group col-md-6" %>
+        <div class="form-group col-md-4"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2"><%= f.label :category_id %></div>
+        <div class="form-group col-md-6 no-padding-left">
+            <%= f.select :category_id, Category.where.not(category_id:nil).pluck(:name,:id) %>
+        </div>
+        <div class="form-group col-md-4"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2"></div>
+        <div class="form-group col-md-9 no-padding-left">
+            <%= f.submit %>
+        </div>
+    </div>
+<% end %>

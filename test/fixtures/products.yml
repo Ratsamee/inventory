@@ -1,0 +1,38 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id          :bigint           not null, primary key
+#  code        :text
+#  name        :text
+#  dimension   :text
+#  style       :text
+#  description :text
+#  brand       :text
+#  image       :text
+#  category_id :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyText
+  name: MyText
+  dimension: MyText
+  style: MyText
+  description: MyText
+  brand: MyText
+  image: MyText
+  category_id: MyText
+
+two:
+  code: MyText
+  name: MyText
+  dimension: MyText
+  style: MyText
+  description: MyText
+  brand: MyText
+  image: MyText
+  category_id: MyText

@@ -1,0 +1,39 @@
+<h1>Product: <%= @product.name %></h1>
+<%= image_tag @product.image, :class => 'feature' if @product.image.present? %>
+<div class="form-row">
+    <div class="form-group col-md-2">Code:</div>
+    <div class="form-group col-md-10"><%= @product.code %></div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-2">Name:</div>
+    <div class="form-group col-md-10"><%= @product.name %></div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-2">Dimension:</div>
+    <div class="form-group col-md-10"><%= @product.dimension %></div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-2">Style:</div>
+    <div class="form-group col-md-10"><%= @product.style %></div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-2">Description:</div>
+    <div class="form-group col-md-10"><%= @product.description %></div>
+</div>
+<div class="form-row">
+    <div class="form-group col-md-2">Brand:</div>
+    <div class="form-group col-md-10"><%= @product.brand %></div>
+</div>
+<% if @product.category.present? %>
+    <div class="form-row">
+        <div class="form-group col-md-2">Category:</div>
+        <div class="form-group col-md-10"><%= link_to @product.category.name, category_path(@product.category) %></div>
+    </div>
+<% end %>
+<div class="form-row">
+    <div class="form-group col-md-6">
+    <%= link_to "Edit Product", edit_product_path(@product) %>
+    <%= link_to "Delete Product", @product, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+    </div>
+</div>
+    

@@ -1,0 +1,19 @@
+
+<h1>All Categories</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Category Name</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @categories.each do |category| %>
+            <tr>
+                <td class="first_column" ><%= link_to category.name, category %></td>
+                <td ><%= category.description %></td>
+            </tr>
+            
+        <% end %>
+    </tbody>
+</table>
