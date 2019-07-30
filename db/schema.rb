@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(version: 2019_07_30_021030) do
   end
 
   create_table "inventories", force: :cascade do |t|
-    t.text "inventory_code"
+    t.text "code"
     t.integer "product_id"
-    t.date "inventory_date"
+    t.text "inventory_date"
     t.float "price"
-    t.integer "inventory_quantity"
+    t.integer "quantity"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

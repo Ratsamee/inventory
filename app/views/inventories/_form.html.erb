@@ -1,0 +1,44 @@
+<% if @inventory.errors.any? %>
+    <div class="form-row">
+        <ul class="error_message">
+            <% @inventory.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+<%= form_for @inventory do |f| %>
+    <div class="form-row">
+        <div class="form-group col-md-2"><%= f.label :code %></div>
+        <%= f.text_field :code, :class => "form-group col-md-6" %>
+        <div class="form-group col-md-4"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2"><%= f.label :inventory_date %></div>
+        <%= f.text_field :inventory_date, :class => "form-group col-md-6" %>
+        <div class="form-group col-md-4"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2"><%= f.label :product_id %></div>
+        <div class="form-group col-md-6 no-padding-left">
+            <%= f.select :product_id, Product.pluck(:name,:id) %>
+        </div>
+        <div class="form-group col-md-4"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2"><%= f.label :price %></div>
+        <%= f.number_field :price, :class => "form-group col-md-6"%>
+        <div class="form-group col-md-4"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2"><%= f.label :quantity %></div>
+        <%= f.number_field :quantity, :class => "form-group col-md-6"%>
+        <div class="form-group col-md-4"></div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2"></div>
+        <div class="form-group col-md-9 no-padding-left">
+            <%= f.submit %>
+        </div>
+    </div>
+<% end %>

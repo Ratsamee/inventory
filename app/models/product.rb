@@ -16,6 +16,6 @@
 #
 
 class Product < ApplicationRecord
-    validates :code, uniqueness: true
+    validates :code, :uniqueness => true
     belongs_to :category
 end

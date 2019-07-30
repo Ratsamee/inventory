@@ -20,10 +20,16 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Inventory</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownInventoriesMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Inventories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="<%=inventories_path%>">All Inventory</a> 
+              <a class="dropdown-item" href="<%=new_inventory_path%>">New Inventory</a>
+            </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategoriesMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

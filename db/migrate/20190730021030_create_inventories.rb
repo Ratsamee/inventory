@@ -3,7 +3,7 @@ class CreateInventories < ActiveRecord::Migration[5.2]
     create_table :inventories do |t|
       t.text :code
       t.integer :product_id
-      t.date :inventory_date
+      t.text :inventory_date
       t.float :price
       t.integer :quantity
       t.integer :user_id

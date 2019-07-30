@@ -3,7 +3,5 @@ Rails.application.routes.draw do
   resources :categories
   resources :products
   resources :users
-  # resources :users, :only => [:new, :create, :update, :index]
-  # get '/users/edit' => 'users#edit', :as => :edit_user
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :inventories, :except => [:destroy]
 end

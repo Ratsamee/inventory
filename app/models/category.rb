@@ -12,7 +12,7 @@
 #
 
 class Category < ApplicationRecord
-    validates :code, uniqueness: true
+    validates :code, :uniqueness => true
     has_many :products
     belongs_to :category, :optional => true
 end
