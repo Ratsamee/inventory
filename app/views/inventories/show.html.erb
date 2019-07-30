@@ -1,34 +1,36 @@
 <h1>Inventory: <%= @inventory.code %></h1>
-<div class="form-row">
-    <div class="form-group col-md-8">
-        <div class="form-row">
-            <div class="form-group col-md-2">Code:</div>
-            <div class="form-group col-md-10"><%= @inventory.code %></div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-2">Date:</div>
-            <div class="form-group col-md-10"><%= @inventory.inventory_date %></div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-2">Product:</div>
-            <div class="form-group col-md-10"><%= @inventory.product.name %></div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-2">Price:</div>
-            <div class="form-group col-md-10"><%= number_to_currency @inventory.price %></div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-2">Quantity:</div>
-            <div class="form-group col-md-10"><%= @inventory.quantity %></div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <%= link_to "Edit Inventory", edit_inventory_path(@inventory) %>
+<div class="add-margin-top">
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            <div class="form-row">
+                <div class="form-group col-md-2">Code:</div>
+                <div class="form-group col-md-10"><%= @inventory.code %></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">Date:</div>
+                <div class="form-group col-md-10"><%= @inventory.inventory_date %></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">Product:</div>
+                <div class="form-group col-md-10"><%= @inventory.product.name %></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">Price:</div>
+                <div class="form-group col-md-10"><%= number_to_currency @inventory.price %></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">Quantity:</div>
+                <div class="form-group col-md-10"><%= @inventory.quantity %></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <%= link_to "Edit Inventory", edit_inventory_path(@inventory) %>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="form-group col-md-4">
-        <%= image_tag @inventory.product.image, :class => 'feature' %>
+        <div class="form-group col-md-4">
+            <%= image_tag @inventory.product.image, :class => 'feature' %>
+        </div>
     </div>
 </div>
 

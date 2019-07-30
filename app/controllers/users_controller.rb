@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :check_for_login, :only => [:edit, :update]
+  before_action :check_for_admin, :only => [:index]
+
   def index
     @users = User.all
   end
@@ -17,11 +20,17 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by :id => params[:id]
+    # user_id = params[:id]
+    # if (!@current_user.nil? && !@current_user.admin?)
+    #   user_id = @current_user.id
+    # end
+    user_id = (!@current_user.nil? && !@current_user.admin?)? @current_user.id  : params[:id]
+    @user = User.find_by :id => user_id
   end
 
   def update
-    @user = User.find_by :id => params[:id]
+    user_id = (!@current_user.nil? && !@current_user.admin?)? @current_user.id  : params[:id]
+    @user = User.find_by :id => user_id
     if @user.update user_params
       redirect_to @user
     else
@@ -31,11 +40,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by :id => params[:id]
+    user_id = (!@current_user.nil? && !@current_user.admin?)? @current_user.id  : params[:id]
+    @user = User.find_by :id => user_id
   end
 
   def destroy
-    user = User.find_by :id => params[:id]
+    user_id = (!@current_user.nil? && !@current_user.admin?)? @current_user.id  : params[:id]
+    user = User.find_by :id => user_id
     user.destroy
     redirect_to users_path
   end

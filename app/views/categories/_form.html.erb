@@ -7,33 +7,35 @@
         </ul>
     </div>
 <% end %>
-<%= form_for @category do |f| %>
-    <div class="form-row">
-        <div class="form-group col-md-2"><%= f.label :code %></div>
-        <%= f.text_field :code, :class => "form-group col-md-6" %>
-        <div class="form-group col-md-4"></div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-2"><%= f.label :name %></div>
-        <%= f.text_field :name, :class => "form-group col-md-6" %>
-        <div class="form-group col-md-4"></div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-2"><%= f.label :description %></div>
-        <%= f.text_area(:description, cols:100, rows:5, class:"form-group col-md-6")%>
-        <div class="form-group col-md-4"></div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-2"><%= f.label "Parent category" %></div>
-        <div class="form-group col-md-6 no-padding-left">
-            <%= f.select :category_id, Category.where(category_id:nil).pluck(:name,:id), :include_blank => true %>
+<div class="add-margin-top">
+    <%= form_for @category do |f| %>
+        <div class="form-row">
+            <div class="form-group col-md-2"><%= f.label :code %></div>
+            <%= f.text_field :code, :class => "form-group col-md-6" %>
+            <div class="form-group col-md-4"></div>
         </div>
-        <div class="form-group col-md-4"></div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-2"></div>
-        <div class="form-group col-md-9 no-padding-left">
-            <%= f.submit %>
+        <div class="form-row">
+            <div class="form-group col-md-2"><%= f.label :name %></div>
+            <%= f.text_field :name, :class => "form-group col-md-6" %>
+            <div class="form-group col-md-4"></div>
         </div>
-    </div>
-<% end %>
+        <div class="form-row">
+            <div class="form-group col-md-2"><%= f.label :description %></div>
+            <%= f.text_area(:description, cols:100, rows:5, class:"form-group col-md-6")%>
+            <div class="form-group col-md-4"></div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-2"><%= f.label "Parent category" %></div>
+            <div class="form-group col-md-6 no-padding-left">
+                <%= f.select :category_id, Category.where(category_id:nil).pluck(:name,:id), :include_blank => true %>
+            </div>
+            <div class="form-group col-md-4"></div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-2"></div>
+            <div class="form-group col-md-9 no-padding-left">
+                <%= f.submit %>
+            </div>
+        </div>
+    <% end %>
+</div>

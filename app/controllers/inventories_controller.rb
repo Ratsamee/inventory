@@ -13,7 +13,7 @@ class InventoriesController < ApplicationController
 
   def create
     @inventory = Inventory.new inventory_params
-    @inventory.user_id = 1
+    @inventory.user_id = @current_user.id
     if @inventory.save
       redirect_to @inventory
     else
@@ -27,7 +27,7 @@ class InventoriesController < ApplicationController
 
   def update
     @inventory = Inventory.find_by :id => params[:id]
-    @inventory.user_id = 1
+    @inventory.user_id = @current_user.id
     if @inventory.update inventory_params
       redirect_to @inventory
     else

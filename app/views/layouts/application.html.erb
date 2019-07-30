@@ -10,17 +10,16 @@
   </head>
 
   <body>
+    <% if !@current_user.nil? %>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <%= link_to "Log out #{@current_user.email}", login_path, :method => 'delete', :class => 'nav-link' %>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownInventoriesMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -31,6 +30,7 @@
               <a class="dropdown-item" href="<%=new_inventory_path%>">New Inventory</a>
             </div>
           </li>
+          <% if @current_user.admin? %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategoriesMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Categories
@@ -42,13 +42,15 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProductsMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Product
+              Products
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="<%=products_path%>">All Products</a> 
               <a class="dropdown-item" href="<%=new_product_path%>">New Product</a>
             </div>
           </li>
+          <% end %>
+          <% if @current_user.admin? %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUsersMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Users
@@ -58,9 +60,15 @@
               <a class="dropdown-item" href="<%=new_user_path%>">New User</a>
             </div>
           </li>
+          <% else %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= edit_user_path(@current_user) %>">User</a>
+          </li>
+          <% end %>
         </ul>
       </div>
     </nav>
+    <% end %>
     <div class="container">
       <%= yield %>
     </div>
