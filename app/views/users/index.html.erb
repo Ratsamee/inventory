@@ -1,0 +1,17 @@
+<h1>All Users</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <% @users.each do |user| %>
+        <tr>
+            <td class="first_column" ><%= link_to user.first_name, user %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.email %></td>
+        </tr>
+    <% end %>
+</table>

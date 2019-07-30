@@ -23,3 +23,12 @@ puts "Create Product"
 Product.create :code => 'P001' , :name => "Anja Woven Open Buffet (Teak)" , :dimension => "	168W x 47.5D x 95H cm" , :brand => "GlobeWest" , :style => "Modern" , :category_id => cat1.id , :image => "https://www.lifeinteriors.com.au/media/catalog/product/cache/1/thumbnail/1200x/17f82f742ffe127f42dca9de82fb58b1/b/u/xbu-glw-anja-tea-1.jpg.pagespeed.ic.I0gnbzMGiw.jpg" , :description => "This sophisticated buffet sideboard features three natural rattan doors and solid Teak construction and blends effortlessly with different styles."
 Product.create :code => 'P002' , :name => "Jaden Dining Chair (Oak)" , :dimension => "52W x 48.5D x 45SH x 82H cm" , :brand => "Life Interiors" , :style => "Contemporary" , :category_id => cat2.id , :image => "https://www.lifeinteriors.com.au/media/catalog/product/cache/1/thumbnail/1200x/17f82f742ffe127f42dca9de82fb58b1/d/c/xdc-bia-jade-oak-pu-grey-2_2.jpg.pagespeed.ic.lMufyBND_S.jpg" , :description => "This is a low maintenance, hard wearing and practical dining solution that does not compromise on style and comfort, featuring single moulded Polypropylene frame and padded leatherette cushion. A Danish inspired design, the single moulded seat is comfortable and perfect for long sittings."
 Product.create :code => 'P003' , :name => "Circa Square Dining Table (70cm)" , :dimension => "70W x 70D x 77H cm" , :brand => "Karpenter" , :style => "Contemporary" , :category_id => cat3.id , :image => "https://www.lifeinteriors.com.au/media/catalog/product/cache/1/thumbnail/1200x/17f82f742ffe127f42dca9de82fb58b1/d/t/dt-kar-circ-squ-70cm-oak-1_1.jpg" , :description => "The Circa range combines timelessly modern design with exquisite craftsmanship, and luxurious solid wood with sumptuous natural finishes. Using sustainably harvested timber, the Circa Square Dining Table 70cm will suit any contemporary dining room for decades to come."
+
+User.destroy_all
+puts "Create user"
+u1 = User.create :first_name => 'Mee', :last_name => 'Kajornchaiyakul', :email => 'mee@ga.co', :admin => true, :password => 'chicken'
+
+# Inventory.destroy_all
+
+# puts "Create Inventory"
+# Inventory.create :

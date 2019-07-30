@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  inventory_code: MyText
+  product_id: 1
+  inventory_date: 2019-07-30
+  price: 1.5
+  inventory_quantity: 1
+
+two:
+  inventory_code: MyText
+  product_id: 1
+  inventory_date: 2019-07-30
+  price: 1.5
+  inventory_quantity: 1
