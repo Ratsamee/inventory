@@ -18,7 +18,7 @@
 
 class Inventory < ApplicationRecord
     belongs_to :user
-    belongs_to :user
     belongs_to :product
+    belongs_to :customer
     validates :code, :uniqueness => true
 end

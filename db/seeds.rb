@@ -33,3 +33,8 @@ Inventory.destroy_all
 puts "Create Inventory"
 r1 = Inventory.create :code => 'R0001', :received_date => '2019-04-28', :product_id => p1.id, :cost => 500, :rpp => 650, :quantity => 24, :qty_on_hand => 24, :bin_location => '001', :user_id => u1.id
 r2 = Inventory.create :code => 'R0002', :received_date => '2019-05-13', :product_id => p2.id, :cost => 20, :rpp => 30, :quantity => 50, :qty_on_hand => 50, :bin_location => '005', :user_id => u1.id
+
+Customer.destroy_all
+puts "Create Customer"
+c1 = Customer.create :first_name => 'pinky', :last_name => 'rossel', :address => '23 Park Street, Balmain, Sydney 2000', :phone_number => '3344 546 431', :email => 'pinkky@ga.co'
+c2 = Customer.create :first_name => 'james', :last_name => 'rossel', :address => '23 Emu Street, Penrith, Sydney 2748', :phone_number => '9999 566 453', :email => 'yellow@ga.co'

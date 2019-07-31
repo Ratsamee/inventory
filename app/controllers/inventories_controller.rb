@@ -13,6 +13,7 @@ class InventoriesController < ApplicationController
 
   def create
     @inventory = Inventory.new inventory_params
+    @inventory.qty_on_hand = @inventory.quantity
     @inventory.user_id = @current_user.id
     if @inventory.save
       redirect_to @inventory
