@@ -29,8 +29,8 @@ puts "Create user"
 u1 = User.create :first_name => 'admin', :last_name => 'system', :email => 'admin@ga.co', :admin => true, :password => 'chicken'
 u2 = User.create :first_name => 'Mee', :last_name => 'K', :email => 'mee@ga.co', :admin => false, :password => 'chicken'
 
-Inventory.destroy_all
+# Inventory.destroy_all
 
-puts "Create Inventory"
-Inventory.create :code => "INV0001", :product_id => p1.id, :inventory_date => '2019-04-12', :price => 59.40, :quantity => 24, :user_id => u1.id
-Inventory.create :code => "INV0002", :product_id => p2.id, :inventory_date => '2019-05-01', :price => 65, :quantity => 10, :user_id => u1.id
+# puts "Create Inventory"
+# Inventory.create :code => "INV0001", :product_id => p1.id, :inventory_date => '2019-04-12', :price => 59.40, :quantity => 24, :user_id => u1.id
+# Inventory.create :code => "INV0002", :product_id => p2.id, :inventory_date => '2019-05-01', :price => 65, :quantity => 10, :user_id => u1.id
