@@ -7,7 +7,7 @@
         </ul>
     </div>
 <% end %>
-<%= form_for @product do |f| %>
+<%= form_for @product, :html => { :multipart => true } do |f| %>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :code %></div>
         <%= f.text_field :code, :class => "form-group col-md-6" %>
@@ -40,7 +40,7 @@
     </div>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :image %></div>
-        <%= f.url_field :image, :class => "form-group col-md-6" %>
+        <%= f.cl_image_upload :image %>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">

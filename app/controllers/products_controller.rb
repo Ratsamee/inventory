@@ -1,6 +1,12 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @search = params[:search]
+    if @search.present?
+      conditions = "UPPER(code) like ? or LOWER(name) like ?"
+      @products = Product.where(conditions, "%#{@search.upcase}%", "%#{@search.downcase}%") 
+    else
+      @products = Product.all
+    end
   end
 
   def new
@@ -9,6 +15,14 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new product_params
+    if params[:file].present?
+      # Then call Cloudinary's upload method, passing in the file in params
+      req = Cloudinary::Uploader.upload(params[:file])
+      # Using the public_id allows us to use Cloudinary's powerful image 
+      # transformation methods.
+      @product.image = req["public_id"]
+    end
+
     if @product.save
       redirect_to @product
     else
@@ -22,6 +36,13 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find_by :id => params[:id]
+
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      @product.image = req["public_id"]
+      @product.save
+    end
+
     if @product.update product_params
       redirect_to @product
     else
