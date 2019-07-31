@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_30_021030) do
+ActiveRecord::Schema.define(version: 2019_07_31_121130) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,14 @@ ActiveRecord::Schema.define(version: 2019_07_30_021030) do
 
   create_table "inventories", force: :cascade do |t|
     t.text "code"
+    t.date "received_date"
     t.integer "product_id"
-    t.text "inventory_date"
-    t.float "price"
+    t.float "cost"
+    t.float "rpp"
     t.integer "quantity"
+    t.integer "qty_on_hand"
     t.integer "user_id"
+    t.text "bin_location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,6 +47,34 @@ ActiveRecord::Schema.define(version: 2019_07_30_021030) do
     t.text "brand"
     t.text "image"
     t.text "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "receives", force: :cascade do |t|
+    t.text "code"
+    t.date "received_date"
+    t.integer "product_id"
+    t.float "cost"
+    t.float "rpp"
+    t.integer "quantity"
+    t.integer "qty_on_hand"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "bin_location"
+  end
+
+  create_table "receivings", force: :cascade do |t|
+    t.text "code"
+    t.date "received_date"
+    t.integer "product_id"
+    t.float "cost"
+    t.float "rpp"
+    t.integer "quantity"
+    t.integer "qty_on_hand"
+    t.integer "user_id"
+    t.text "bin_location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

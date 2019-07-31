@@ -16,10 +16,9 @@
 #  updated_at    :datetime         not null
 #
 
-require 'test_helper'
-
-class InventoryTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+class Inventory < ApplicationRecord
+    belongs_to :user
+    belongs_to :user
+    belongs_to :product
+    validates :code, :uniqueness => true
 end
