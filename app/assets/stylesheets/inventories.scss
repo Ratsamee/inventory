@@ -1,3 +1,11 @@
-// Place all the styles related to the inventories controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.feature {
+    max-height: 18em;
+    padding-left: 40px;
+    border-radius: 20%;
+}
+
+.border-picture {
+    border-radius: 20%;
+    box-shadow: 10px 20px 30px gray;
+    box-sizing: border-box;
+}

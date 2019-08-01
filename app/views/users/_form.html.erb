@@ -10,23 +10,23 @@
 <%= form_for @user do |f| %>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :first_name %></div>
-        <%= f.text_field :first_name, :class => "form-group col-md-6" %>
+        <%= f.text_field :first_name, maxlength: 25, :required => true, :class => "form-group col-md-6" %>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :last_name %></div>
-        <%= f.text_field :last_name, :class => "form-group col-md-6" %>
+        <%= f.text_field :last_name, maxlength: 25, :required => true, :class => "form-group col-md-6" %>
         <div class="form-group col-md-4"></div>
     </div>
     
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :email %></div>
-        <%= f.email_field :email, :class => "form-group col-md-6" %>
+        <%= f.email_field :email, maxlength: 20, :required => true, :class => "form-group col-md-6" %>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :password %></div>
-        <%= f.password_field :password, :class => "form-group col-md-6" %>
+        <%= f.password_field :password, maxlength: 20, :required => true, :class => "form-group col-md-6" %>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">

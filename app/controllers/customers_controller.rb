@@ -33,6 +33,12 @@ class CustomersController < ApplicationController
     end
   end
 
+  def destroy
+    customer = Customer.find_by :id => params[:id]
+    customer.destroy
+    redirect_to customer
+  end
+
   private
   def customer_params
     params.require(:customer).permit(:first_name, :last_name, :address, :phone_number, :email)

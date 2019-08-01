@@ -10,27 +10,27 @@
 <%= form_for @customer, :html => { :multipart => true } do |f| %>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :first_name %></div>
-        <%= f.text_field :first_name, :class => "form-group col-md-6" %>
+        <%= f.text_field :first_name, maxlength: 25, :required => true, :class => "form-group col-md-6" %>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :last_name %></div>
-        <%= f.text_field :last_name, :class => "form-group col-md-6" %>
+        <%= f.text_field :last_name, maxlength: 25, :required => true, :class => "form-group col-md-6" %>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :address %></div>
-        <%= f.text_area(:address, cols:100, rows:5, class:"form-group col-md-6") %>
+        <%= f.text_area(:address, cols:100, rows:5, maxlength: 1000, :required => true, class:"form-group col-md-6") %>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :phone_number %></div>
-        <%= f.text_field :phone_number, :class => "form-group col-md-6" %>
+        <%= f.number_field :phone_number, maxlength: 15, :class => "form-group col-md-6" %>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :email %></div>
-        <%= f.text_field :email, :class => "form-group col-md-6" %>
+        <%= f.email_field :email, maxlength: 25, :class => "form-group col-md-6" %>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">

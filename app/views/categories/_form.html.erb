@@ -11,17 +11,17 @@
     <%= form_for @category do |f| %>
         <div class="form-row">
             <div class="form-group col-md-2"><%= f.label :code %></div>
-            <%= f.text_field :code, :class => "form-group col-md-6" %>
+            <%= f.text_field :code, maxlength: 8, :required => true, :class => "form-group col-md-6" %>
             <div class="form-group col-md-4"></div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-2"><%= f.label :name %></div>
-            <%= f.text_field :name, :class => "form-group col-md-6" %>
+            <%= f.text_field :name, maxlength: 25, :required => true, :class => "form-group col-md-6" %>
             <div class="form-group col-md-4"></div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-2"><%= f.label :description %></div>
-            <%= f.text_area(:description, cols:100, rows:5, class:"form-group col-md-6")%>
+            <%= f.text_area(:description, cols:100, rows:5, maxlength: 1000, class:"form-group col-md-6")%>
             <div class="form-group col-md-4"></div>
         </div>
         <div class="form-row">

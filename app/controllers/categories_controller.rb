@@ -1,6 +1,13 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    @search = params[:search]
+    if @search.present?
+      conditions = "UPPER(code) like ? or LOWER(name) like ?"
+      @categories = Category.where(conditions, "%#{@search.upcase}%", "%#{@search.downcase}%") 
+    else
+      @categories = Category.all
+    end
+    
   end
 
   def new

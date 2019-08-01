@@ -8,8 +8,16 @@
 
 .feature {
     max-height: 18em;
+    padding-left: 40px;
+    border-radius: 20%;
 }
 
 .add-margin-top {
     margin-top: 20px;
+}
+
+.border-picture {
+    border-radius: 20%;
+    box-shadow: 10px 20px 30px gray;
+    box-sizing: border-box;
 }

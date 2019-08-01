@@ -10,12 +10,12 @@
 <%= form_for @inventory do |f| %>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :code %></div>
-        <%= f.text_field :code, :class => "form-group col-md-6" %>
+        <%= f.text_field :code, maxlength: 8, :required => true, :class => "form-group col-md-6" %>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :received_date %></div>
-        <%= f.date_field :received_date, :class => "form-group col-md-6" %>
+        <%= f.date_field :received_date, :required => true, :class => "form-group col-md-6" %>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">
@@ -27,27 +27,27 @@
     </div>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :cost %></div>
-        <%= f.number_field :cost, :class => "form-group col-md-6"%>
+        <%= f.number_field :cost, maxlength: 10, :required => true, :class => "form-group col-md-6"%>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label "Price" %></div>
-        <%= f.number_field :rpp, :class => "form-group col-md-6"%>
+        <%= f.number_field :rpp, maxlength: 10, :required => true, :class => "form-group col-md-6"%>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :quantity %></div>
-        <%= f.number_field :quantity, :class => "form-group col-md-6"%>
+        <%= f.number_field :quantity, maxlength: 10, :required => true, :class => "form-group col-md-6", disabled: @inventory.quantity == 0%>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :qty_on_hand %></div>
-        <%= f.number_field :qty_on_hand, :class => "form-group col-md-6"%>
+        <%= f.number_field :qty_on_hand, :class => "form-group col-md-6", disabled: true %>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-2"><%= f.label :bin_location %></div>
-        <%= f.text_field :bin_location, :class => "form-group col-md-6" %>
+        <%= f.text_field :bin_location, maxlength: 10, :class => "form-group col-md-6" %>
         <div class="form-group col-md-4"></div>
     </div>
     <div class="form-row">

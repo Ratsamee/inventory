@@ -1,5 +1,9 @@
 
 <h1>All Categories</h1>
+<form class="search-area" action="<%= categories_path %>" method="get">
+  <input class="search-area" type="search" name="search" id="search" value="<%= @search%>">
+  <button type="submit" class="btn-success">Search</button>
+</form> 
 <table class="table table-striped">
     <thead>
         <tr>
