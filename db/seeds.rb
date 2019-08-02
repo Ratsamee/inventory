@@ -27,7 +27,7 @@ p3 = Product.create :code => 'P003' , :name => "Circa Square Dining Table (70cm)
 User.destroy_all
 puts "Create user"
 u1 = User.create :first_name => 'admin', :last_name => 'system', :email => 'admin@ga.co', :admin => true, :password => 'chicken'
-u2 = User.create :first_name => 'Mee', :last_name => 'K', :email => 'mee@ga.co', :admin => false, :password => 'chicken'
+u2 = User.create :first_name => 'user', :last_name => 'normal', :email => 'user@ga.co', :admin => false, :password => 'chicken'
 
 Inventory.destroy_all
 puts "Create Inventory"
